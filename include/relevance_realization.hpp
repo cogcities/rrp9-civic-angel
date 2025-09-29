@@ -205,6 +205,11 @@ public:
         return edge->id;
     }
     
+    // Create co-construction edges for agent-arena coupling
+    unsigned addCoConstructionEdge(unsigned from_node, unsigned to_node, double strength = 0.5) {
+        return addRelationEdge(from_node, to_node, RREdge::CO_CONSTRUCTION, strength);
+    }
+    
     // Recursive relevance realization update
     void updateRelevanceRealization(double delta_time) {
         // Update all nodes according to trialectic dynamics
